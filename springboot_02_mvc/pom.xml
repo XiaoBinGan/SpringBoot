@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.practice</groupId>
+    <artifactId>springboot_02_mvc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--    所有的Spring boot项目都要继承这个父工程，父工程对所有的jar包进行管理-->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.8</version>
+    </parent>
+    <dependencies>
+        <!--问题1    为什么我现在就添加一个启动器依赖，项目就可以运行起来了，运行项目的jar包从何而来
+                    因为项目中我们指定了一个父工程，在spring-boot-starter-parent中已经通过Maven的版本锁定了jar包的版本
+        -->
+
+        <!-- Spring Web启动器 -->
+        <!--
+             框架提供了很多的启动器（起步依赖），其实就是一组jar包的名称。
+             web启动器：引入web开发相关的jar
+         -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--Lombok的主要作用是通过简化常见的Java代码模式，减少样板代码的编写，提高开发效率，
+        减少代码错误，增加代码的可读性和可维护性。它已经成为许多Java开发人员的常用工具之一，
+        并在许多开源项目和企业应用中广泛使用。-->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version> <!-- 请检查并使用最新的版本 -->
+            <scope>provided</scope>
+        </dependency>
+        <!--
+          @ConfigurationProperties(prefix = "spring.jdbc.datasource")
+          需要配置spring-boot-configuration-processor依赖,用于生成metadata,否则会警告。
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
+
+</project>

@@ -1,0 +1,23 @@
+# 开发组IDE 编辑器标准 V2.1.0
+root = true
+
+[*.{adoc, bat, groovy, html, java, js, jsp, kt, kts, md, properties, py, rb, sh, sql, svg, txt, xml, xsd}]
+charset = utf-8
+
+[*.{groovy, java, kt, kts, xml, xsd}]
+# 缩进风格，可选space、tab
+indent_style = space
+# 缩进空格数
+indent_size = 4
+# 结尾换行符，可选 lf、cr、crlf
+end_of_line = lf
+# 删除一行中的前后空格
+trim_trailing_whitespace = true
+
+[*.{js, html}]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+# 删除一行中的前后空格
+trim_trailing_whitespace = true

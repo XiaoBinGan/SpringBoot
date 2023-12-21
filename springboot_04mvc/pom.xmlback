@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.practice</groupId>
+    <artifactId>springboot_04mvc</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <!-- 所有的Spring boot项目都要继承这个父工程，父工程对所有的jar包进行管理 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.8</version>
+    </parent>
+
+    <!-- 依赖 -->
+    <dependencies>
+        <!-- 单元测试启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- 通用mapper启动器 -->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>2.1.5</version> <!-- 使用最新版本 -->
+        </dependency>
+
+        <!-- JDBC启动器spring-boot-starter-jdbc 是 Spring Boot 中用于简化 JDBC 开发的启动器。它提供了 JDBC 相关的基础配置，让开发者能够更轻松地使用 Spring JDBC 访问数据库。 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+
+        <!-- mysql驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.23</version> <!-- 使用最新版本 -->
+        </dependency>
+
+        <!-- druid启动器 数据库连接池-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.17</version> <!-- 使用最新版本 -->
+        </dependency>
+
+        <!-- Web启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- spring boot Actuator依赖  spring-boot-starter-actuator 是 Spring Boot 提供的一个用于生产环境监控和管理的模块。它为 Spring Boot 应用程序提供了一组内置的、用于监视和管理应用程序的端点（endpoints）。这些端点包括健康检查、信息展示、环境属性、配置信息、日志等，允许你监控应用程序的运行状况、收集信息和进行一些管理操作。-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- 编码工具包 common3-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version> <!-- 使用最新版本 -->
+        </dependency>
+
+        <!-- 热部署 spring-boot-devtools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <!-- Redis 启动器依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!--Lombok的主要作用是通过简化常见的Java代码模式，减少样板代码的编写，提高开发效率，
+       减少代码错误，增加代码的可读性和可维护性。它已经成为许多Java开发人员的常用工具之一，
+       并在许多开源项目和企业应用中广泛使用。-->
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version> <!-- 请检查并使用最新的版本 -->
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Spring Boot Admin Client 在POM文件中添加Client的依赖注意要和Server的依赖配套：-->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-client</artifactId>
+            <version>2.7.13</version>
+        </dependency>
+
+    </dependencies>
+    <!-- 打包成jar   -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,13 @@
+server:
+  port: 8888  # 设置应用程序的端口号
+
+spring:
+  application:
+    name: my-Admin  # 设置应用程序的名称
+
+
+
+
+
+
+
