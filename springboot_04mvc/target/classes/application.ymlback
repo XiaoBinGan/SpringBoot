@@ -1,0 +1,51 @@
+# 服务器端口配置
+server:
+  port: 9090
+
+# Spring 数据源配置
+spring:
+  datasource:
+    # 数据库连接 URL
+    url: jdbc:mysql://127.0.0.1:3306/springboot
+    # MySQL 驱动类
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 数据库用户名
+    username: root
+    # 数据库密码
+    password:
+    # 数据源类型（这里使用了 Druid 数据源）
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+  # 配置Actuator的安全性
+  security:
+    user:
+      name: admin # 设置Actuator的用户名
+      password: password # 设置Actuator的密码
+  application:
+    name: my-Client #名称随便起的
+  boot:
+    admin:
+      client:
+        url: http://localhost:8888 # 指定注册的地址，地址指向 Spring Boot Admin Server地址
+
+
+# 配置Actuator端点的访问路径
+management:
+  endpoints:
+    web:
+      base-path: /health # 设置Actuator的基本路径，默认为/actuator，这里我们设置为/health
+      exposure:
+        include: "*" # 包括所有Actuator端点 对外暴露所有的访问路径 ，默认是/health 和 /info
+      # exclude: env # 排除env端点
+    health:
+      show-details: always # 显示详细的健康信息
+  server:
+    port: 9091 #设置Actuator的基的访问端口，不设置的话默认是同Web启动器的server.port一致
+# MyBatis 配置
+mybatis:
+  # MyBatis 类型别名包扫描路径，用于扫描指定包下的类作为 MyBatis 实体类
+  type-aliases-package: com.practice.pojo
+

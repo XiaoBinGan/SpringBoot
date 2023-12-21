@@ -1,0 +1,8 @@
+com/practice/service/impl/UserServiceimpl.class
+com/practice/utils/RedisUtil.class
+com/practice/dao/UserMapper.class
+com/practice/controller/UserController.class
+com/practice/vo/Result.class
+com/practice/service/UserService.class
+com/practice/App.class
+com/practice/pojo/User.class

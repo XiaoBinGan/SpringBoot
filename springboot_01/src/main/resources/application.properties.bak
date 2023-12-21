@@ -1,0 +1,8 @@
+#spring-boot框架规定配置文件的名称必须为application.properties或application.yml
+#在这个文件中在进行默认配置的修改
+#这里将Tomcat默认的端口修改成8090，用来覆盖启动其中jar包的默认配置
+server.port=8090
+spring.jdbc.datasource.driverClassName=com.mysql.jdbc.Driver
+spring.jdbc.datasource.url=jdbc:///springboot_01
+spring.jdbc.datasource.username=root
+spring.jdbc.datasource.password=root

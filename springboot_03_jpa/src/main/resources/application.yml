@@ -1,0 +1,19 @@
+logging:
+  level:
+    com.practice.dao: debug #Dao日志等级配置
+spring:
+  datasource:
+    username: root
+    password:
+    url: jdbc:mysql://127.0.0.1:3306/java?usenUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver #jdk8默认驱动
+  jpa:
+    database: mysql #持久化方案采用mysql
+    show-sql: true #控制台展示sql语句
+    generate-ddl: true #生成ddl语句打印在控制台中
+    hibernate:
+      ddl-auto: update #表不存在自动创建，表与类一致则不修改，类与表不一致则更新表结构
+      naming:     #类使用驼峰命名方式表里可能是有下划线的
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+server:
+  port: 9090 #端口号
